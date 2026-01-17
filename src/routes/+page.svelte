@@ -19,7 +19,10 @@
 
   function handlePointerMove(e) {
     if (isActive) {
-      position = { x: e.clientX, y: e.clientY };
+      position = {
+        x: Math.max(0, Math.min(e.clientX, window.innerWidth)),
+        y: Math.max(0, Math.min(e.clientY, window.innerHeight))
+      };
     }
   }
 
